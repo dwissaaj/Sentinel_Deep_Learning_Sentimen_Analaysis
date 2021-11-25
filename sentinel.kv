@@ -1,0 +1,73 @@
+<MyGrid>
+    button_prequisite : button_prequisite
+    button_sentiment : button_sentiment
+    button_requirement : button_requirement
+    button_summary: button_summary
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width,root.height
+        spacing : 25
+        padding : 275,5
+        Image:
+            source: 'image/image.png'
+            size_hint: None,None
+            size: 150, 150
+            allow_stretch: True
+            pos_hint: {'center_x': 0.5, 'center_y': 0.75}
+
+        Button:
+            id: button_prequisite
+            text:'Prerequisite'
+            font_size:25
+            size: 250, 50
+            size_hint: None, None
+
+        Button:
+            id: button_sentiment
+            text:'Sentiment'
+            font_size:25
+            size: 250, 50
+            size_hint: None, None
+
+        Button:
+            id:button_requirement
+            text:'Requirement'
+            font_size:25
+            size: 250, 50
+            size_hint: None, None
+
+        Button:
+            id:button_summary
+            text:'Model Summary'
+            font_size:25
+            size: 250, 50
+            size_hint: None, None
+
+        Label:
+            id: quotes
+            markup: True
+            text: "[color=000000]Sentiment Analysis with Deep Learning[color=000000] \n            [color=000000]Supported By[color=000000] [color=eb8934]Tensor[color=eb8934][color=030303]Flow[color=030303]"
+            italic : True
+            bold : True
+            font_name : 'Georgia'
+            font_size: 18
+            size_hint: None, None
+            pos_hint: {'center_x': 0.5, 'center_y': 5}
+            color : [0, 0, 0, 1]
+
+
+    AnchorLayout:
+        anchor_x: 'left'
+        anchor_y: 'bottom'
+        padding : 30,10
+        Label:
+            id: link
+            font_size: 11
+            markup: True
+            size_hint: None, None
+            text: '[b][i][color=000000]Ask For Help?[color=000000][/b][/i]\n[ref=some][color=0000ff]https://github.com/dwissaaj[/ref][color=0000ff] \n[b][i][color=000000]Or Contact Instagram[color=000000][/b][/i]\n[ref=some][color=0000ff]@dwisaji[/ref][color=0000ff]'
+            on_ref_press:
+                import webbrowser
+                webbrowser.open('https://github.com/dwissaaj')
+
