@@ -10,19 +10,31 @@ from kivy.uix.widget import Widget
 from kivy.uix.anchorlayout import AnchorLayout
 from kivy.core.window import Window
 from kivy.properties import ObjectProperty
-
-class MyGrid(Widget):
-    button_prequisite = ObjectProperty(None)
-    button_sentiment = ObjectProperty(None)
-    button_requirement = ObjectProperty(None)
-    button_summary =  ObjectProperty(None)
+from kivy.lang import Builder
+from kivy.uix.screenmanager import ScreenManager,Screen
 
 
+class MainWindow(Screen):
+    pass
+
+class prequisiteWindow(Screen):
+    pass
+class sentimentWindow(Screen):
+    pass
+class requirementWindow(Screen):
+    pass
+class modelWindow(Screen):
+    pass
+
+class WindowManager(ScreenManager):
+    pass
+
+kv = Builder.load_file("sentinel.kv")
 
 class sentinel(App):
+    Window.clearcolor = (240 / 255, 240 / 255, 240 / 255, 1)
     def build(self):
-        Window.clearcolor = (240/255,240/255,240/255,1)
-        return MyGrid()
+        return kv
 
 
 if __name__ == "__main__":
